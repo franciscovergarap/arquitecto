@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Francisco Vergara Perucich · Arquitecto</title>
+<meta name="description" content="Arquitecto Ph.D. Proyectos habitacionales, remodelaciones, evaluación de inversión y consultoría urbana con procesos, costos y plazos transparentes." />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='8' fill='%23201C17'/><text x='50' y='68' font-family='Arial' font-weight='700' font-size='38' fill='%23a82ca2' text-anchor='middle'>FVP</text></svg>" />
+<meta property="og:title" content="Francisco Vergara Perucich · Arquitecto" />
+<meta property="og:description" content="Arquitecto Ph.D. Proyectos habitacionales, remodelaciones, evaluación de inversión y consultoría urbana con procesos, costos y plazos transparentes." />
+<meta property="og:type" content="website" />
+<meta property="og:locale" content="es_CL" />
+<meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Francisco Vergara Perucich · Arquitecto" />
+<meta name="twitter:description" content="Arquitecto Ph.D. Proyectos habitacionales, remodelaciones, evaluación de inversión y consultoría urbana con procesos, costos y plazos transparentes." />
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --ink:#000000;        /* warm drawing-ink black */
+  --paper:#feebfc;      /* concrete paper (cooler than cream) */
+  --paper-2:#ffffff;    /* light card */
+  --char:#201C17;       /* charcoal band */
+  --char-2:#221822;
+  --rust:#a82ca2;       /* corten accent, from his built work */
+  --rust-hi:#c43fc4;
+  --line:#c3b4c6;       /* hairline on paper */
+  --line-dk:#3c2c3c;    /* hairline on dark */
+  --stone:#6d5a6e;      /* muted caption/data */
+  --stone-lt:#94849a;
+  --disp:"Arial",system-ui,sans-serif;
+  --body:"Arial",system-ui,sans-serif;
+  --mono:"Arial",ui-monospace,monospace;
+  --wrap:1180px;
+  --gut:clamp(20px,5vw,64px);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:17px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:var(--disp);font-weight:600;line-height:1.02;margin:0}
+a{color:inherit}
+img{max-width:100%;display:block}
+::selection{background:var(--rust);color:#ffffff}
+
+/* utility text */
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--rust)}
+.wrap{max-width:var(--wrap);margin:0 auto;padding-left:var(--gut);padding-right:var(--gut)}
+
+/* dimension line motif: a rule with tick ends + centred label */
+.dim{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--stone)}
+.dim::before,.dim::after{content:"";height:9px;width:1px;background:currentColor;flex:none}
+.dim .rule{height:1px;background:currentColor;flex:1;transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.reveal .dim .rule{transform:scaleX(1)}
+.dim .rule{transform:scaleX(0)}
+.reveal.dim .rule{transform:scaleX(1)}
+
+/* ============ NAV ============ */
+.nav{position:fixed;inset:0 0 auto 0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px var(--gut);
+  background:rgba(231, 222, 232, 0.82);backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:padding .3s,border-color .3s,background .3s}
+.nav.shrunk{padding:9px var(--gut);border-bottom:1px solid var(--line)}
+.brand{font-family:var(--disp);font-weight:700;font-size:26px;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:baseline;gap:2px}
+.brand .dot{color:var(--rust)}
+.nav-links{display:flex;align-items:center;gap:26px}
+.nav-links a{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;color:var(--ink);opacity:.7;transition:opacity .2s;position:relative;padding:4px 0}
+.nav-links a:hover{opacity:1}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-2px;height:1px;width:0;background:var(--rust);transition:width .25s}
+.nav-links a:hover::after{width:100%}
+.nav-right{display:flex;align-items:center;gap:16px}
+.lang{display:flex;font-family:var(--mono);font-size:12px;border:1px solid var(--line);border-radius:1px}
+.lang button{background:none;border:0;padding:5px 9px;cursor:pointer;color:var(--stone);font-family:inherit;font-size:inherit;letter-spacing:.06em}
+.lang button.on{background:var(--ink);color:var(--paper)}
+.cta{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:1px;transition:background .2s}
+.cta:hover{background:var(--rust)}
+.burger{display:none;background:none;border:1px solid var(--line);padding:8px 10px;cursor:pointer;font-family:var(--mono);font-size:11px;letter-spacing:.1em}
+
+/* ============ HERO ============ */
+.hero{position:relative;background:var(--char);color:var(--paper);
+  padding:150px var(--gut) 0;min-height:100svh;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.hero-grid{position:absolute;inset:0;pointer-events:none;opacity:.5}
+.hero-grid span{position:absolute;font-family:var(--mono);font-size:10px;color:var(--stone-lt);
+  width:22px;height:22px;border:1px solid var(--line-dk);border-radius:50%;display:grid;place-items:center}
+.hero-inner{max-width:var(--wrap);margin:0 auto;width:100%;position:relative;z-index:2}
+.hero .eyebrow{color:var(--rust-hi)}
+.hero h1{font-size:clamp(2.6rem,8vw,6.3rem);letter-spacing:-.035em;margin:.35em 0 .1em;max-width:15ch}
+.hero h1 em{font-style:normal;color:var(--rust-hi)}
+.hero .lead{font-size:clamp(1.05rem,2.2vw,1.4rem);color:#d9c8d8;max-width:44ch;margin:0 0 34px;line-height:1.45}
+.hero-cta{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-bottom:48px}
+.btn-primary{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  background:var(--rust);color:#fff;padding:15px 24px;border-radius:1px;transition:background .2s,transform .2s}
+.btn-primary:hover{background:var(--rust-hi);transform:translateY(-1px)}
+.btn-ghost{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+  color:var(--paper);padding:15px 20px;border:1px solid var(--line-dk);border-radius:1px;transition:border-color .2s}
+.btn-ghost:hover{border-color:var(--rust-hi)}
+.hero .dim{color:var(--stone-lt);padding-bottom:34px;max-width:640px}
+
+/* credibility strip */
+.creds{background:var(--ink);color:var(--paper);border-top:1px solid var(--line-dk)}
+.creds .row{display:flex;flex-wrap:wrap;gap:8px 34px;padding:18px var(--gut);max-width:var(--wrap);margin:0 auto;
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-lt)}
+.creds .row span{display:flex;align-items:center;gap:10px}
+.creds .row span::before{content:"—";color:var(--rust-hi)}
+
+/* ============ SECTION SHELL ============ */
+.section{padding:clamp(72px,10vw,130px) 0;position:relative}
+.section--paper{background:var(--paper)}
+.section--light{background:var(--paper-2)}
+.section--dark{background:var(--char);color:var(--paper)}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:start;margin-bottom:56px}
+.sec-head .code{font-family:var(--mono);font-size:12px;letter-spacing:.14em;color:var(--rust);padding-top:10px}
+.sec-head h2{font-size:clamp(1.8rem,4.4vw,3rem);letter-spacing:-.03em}
+.sec-head p{margin:16px 0 0;max-width:52ch;color:var(--stone);font-size:1.05rem}
+.section--dark .sec-head p{color:#c4b2c3}
+
+/* ============ SERVICIOS ============ */
+.svc{display:grid;gap:0;border-top:1px solid var(--line)}
+.svc-item{display:grid;grid-template-columns:120px 1fr auto;gap:24px;align-items:baseline;
+  padding:30px 4px;border-bottom:1px solid var(--line);transition:background .25s;position:relative}
+.svc-item:hover{background:rgba(168,87,44,.05)}
+.svc-tag{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust);padding-top:6px}
+.svc-body h3{font-size:1.5rem;letter-spacing:-.02em;margin-bottom:6px}
+.svc-body p{margin:0;color:var(--stone);max-width:60ch;font-size:1rem}
+.svc-meta{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone-lt);text-align:right;white-space:nowrap}
+
+/* ============ PROCESO ============ */
+.proc{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--line-dk)}
+.proc-step{padding:28px 22px 34px;border-right:1px solid var(--line-dk);position:relative}
+.proc-step:last-child{border-right:0}
+.proc-step .num{font-family:var(--disp);font-weight:700;font-size:2.4rem;color:var(--rust-hi);letter-spacing:-.04em;line-height:1}
+.proc-step .dur{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-lt);margin:14px 0 12px;display:block}
+.proc-step h3{font-size:1.15rem;letter-spacing:-.01em;margin-bottom:10px;color:var(--paper)}
+.proc-step p{margin:0 0 14px;font-size:.92rem;color:#beacbd;line-height:1.5}
+.proc-step .pay{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--rust-hi);
+  border-top:1px solid var(--line-dk);padding-top:12px;display:block}
+
+/* ============ COTIZADOR (signature) ============ */
+.calc-shell{border:1.5px solid var(--ink);background:var(--paper-2);position:relative}
+.calc-titlebar{display:flex;justify-content:space-between;align-items:center;
+  border-bottom:1.5px solid var(--ink);padding:12px 20px;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+.calc-titlebar .r{color:var(--stone)}
+.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.calc-inputs{padding:30px;border-right:1.5px solid var(--ink)}
+.calc-out{padding:30px;background:var(--ink);color:var(--paper);display:flex;flex-direction:column}
+.field{margin-bottom:22px}
+.field label{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:8px}
+.field select,.field input{width:100%;background:var(--paper);border:1px solid var(--line);border-radius:1px;
+  padding:12px 14px;font-family:var(--body);font-size:1rem;color:var(--ink)}
+.field select:focus,.field input:focus{outline:2px solid var(--rust);outline-offset:1px;border-color:var(--rust)}
+.field .hint{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;color:var(--stone-lt);margin-top:6px;text-transform:none}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.opts{display:flex;flex-direction:column;gap:10px;margin-bottom:8px}
+.opt{display:flex;gap:10px;align-items:flex-start;font-size:.92rem;color:var(--ink);cursor:pointer}
+.opt input{margin-top:3px;accent-color:var(--rust);width:auto}
+.opt small{display:block;color:var(--stone);font-size:.8rem;line-height:1.35}
+.calc-out .eyebrow{color:var(--rust-hi)}
+.result-num{font-family:var(--disp);font-weight:700;font-size:clamp(2.6rem,6vw,3.8rem);letter-spacing:-.04em;line-height:1;margin:6px 0 2px}
+.result-num .u{font-size:1.4rem;color:var(--stone-lt);font-weight:500;letter-spacing:0}
+.result-clp{font-family:var(--mono);font-size:14px;letter-spacing:.06em;color:#cfbdcf;margin-bottom:22px}
+.breakdown{border-top:1px solid var(--line-dk);margin-top:auto}
+.breakdown .brow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--line-dk);
+  font-family:var(--mono);font-size:12px;letter-spacing:.04em}
+.breakdown .brow span:first-child{color:var(--stone-lt);text-transform:uppercase;font-size:10.5px;letter-spacing:.1em}
+.breakdown .brow b{font-weight:700}
+.calc-note{padding:16px 20px;border-top:1.5px solid var(--ink);font-family:var(--mono);font-size:10.5px;letter-spacing:.03em;color:var(--stone);line-height:1.7;text-transform:none}
+.calc-note b{color:var(--ink)}
+
+/* ============ OBRAS ============ */
+.works{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:var(--line)}
+.work{position:relative;aspect-ratio:4/5;overflow:hidden;background:var(--char);cursor:default}
+.work .ph-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.work .ph-label{position:absolute;inset:0;z-index:0;display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-lt);padding:20px;text-align:center}
+.work .meta{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:18px;
+  background:linear-gradient(to top,rgba(23,20,15,.92),rgba(23,20,15,.05));color:var(--paper);
+  transform:translateY(calc(100% - 62px));transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+.work:hover .meta,.work:focus-within .meta{transform:translateY(0)}
+.work .meta .tag{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-hi)}
+.work .meta h3{font-size:1.2rem;letter-spacing:-.01em;margin:6px 0 4px}
+.work .meta .place{font-family:var(--mono);font-size:11px;color:var(--stone-lt);letter-spacing:.06em}
+.work .meta p{margin:10px 0 0;font-size:.9rem;color:#c9b7c6;line-height:1.45}
+
+/* ============ ENFOQUE (quote) ============ */
+.enfoque{background:var(--char);color:var(--paper)}
+.enfoque blockquote{margin:0;font-family:var(--disp);font-weight:500;
+  font-size:clamp(1.5rem,3.6vw,2.5rem);line-height:1.22;letter-spacing:-.02em;max-width:22ch}
+.enfoque blockquote em{color:var(--rust-hi);font-style:normal}
+.enfoque .attr{margin-top:28px;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone-lt)}
+.enfoque .cols{display:grid;grid-template-columns:1.3fr 1fr;gap:60px;align-items:center}
+.enfoque .vals{display:grid;gap:1px;background:var(--line-dk);border:1px solid var(--line-dk)}
+.enfoque .val{background:var(--char);padding:20px}
+.enfoque .val .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rust-hi);margin-bottom:6px}
+.enfoque .val p{margin:0;font-size:.95rem;color:#C4BEB2;line-height:1.5}
+
+/* ============ SOBRE ============ */
+.about-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:60px}
+.about-bio p{margin:0 0 18px;font-size:1.08rem;line-height:1.65;max-width:56ch}
+.about-bio p:first-of-type{font-size:1.2rem}
+.creds-list{border-top:1px solid var(--line)}
+.creds-list .cr{display:grid;grid-template-columns:auto 1fr;gap:18px;padding:16px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.creds-list .cr .y{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--rust);white-space:nowrap}
+.creds-list .cr .t{font-size:.98rem}
+.creds-list .cr .t small{display:block;color:var(--stone);font-family:var(--mono);font-size:11px;letter-spacing:.04em;margin-top:3px;text-transform:uppercase}
+
+/* ============ CONTACTO ============ */
+.contact{background:var(--ink);color:var(--paper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.contact h2{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.03em;max-width:14ch}
+.contact .lead{color:#C4BEB2;margin:20px 0 34px;max-width:40ch;font-size:1.1rem}
+.contact-lines a{display:flex;align-items:center;gap:14px;text-decoration:none;color:var(--paper);
+  padding:16px 0;border-bottom:1px solid var(--line-dk);font-family:var(--mono);font-size:13px;letter-spacing:.06em;transition:color .2s}
+.contact-lines a:hover{color:var(--rust-hi)}
+.contact-lines a .lbl{color:var(--stone-lt);width:110px;text-transform:uppercase;font-size:11px;letter-spacing:.12em}
+.contact-lines .todo{color:var(--rust-hi);font-size:10px}
+form .field label{color:var(--stone-lt)}
+form input,form textarea{width:100%;background:var(--char);border:1px solid var(--line-dk);border-radius:1px;color:var(--paper);
+  padding:12px 14px;font-family:var(--body);font-size:1rem;margin-bottom:14px}
+form input:focus,form textarea:focus{outline:2px solid var(--rust);outline-offset:1px;border-color:var(--rust)}
+form button{font-family:var(--mono);font-size:13px;letter-spacing:.1em;text-transform:uppercase;
+  background:var(--rust);color:#fff;border:0;padding:15px 26px;border-radius:1px;cursor:pointer;transition:background .2s}
+form button:hover{background:var(--rust-hi)}
+
+/* ============ FOOTER ============ */
+.footer{background:var(--char);color:var(--stone-lt);border-top:1px solid var(--line-dk)}
+.footer .row{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding:30px var(--gut);
+  max-width:var(--wrap);margin:0 auto;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.footer .brand{color:var(--paper);font-size:22px}
+
+/* ============ REVEAL ============ */
+.r-up{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.r-up.reveal{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .r-up{opacity:1;transform:none;transition:none}
+  .dim .rule{transform:scaleX(1)!important}
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width:900px){
+  .nav-links{display:none}
+  .burger{display:block}
+  .nav.open .nav-links{display:flex;position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;
+    background:var(--paper);border-bottom:1px solid var(--line);padding:8px var(--gut) 18px}
+  .nav.open .nav-links a{padding:12px 0;border-bottom:1px solid var(--line)}
+  .proc{grid-template-columns:1fr 1fr}
+  .proc-step:nth-child(2n){border-right:0}
+  .proc-step{border-bottom:1px solid var(--line-dk)}
+  .calc-grid{grid-template-columns:1fr}
+  .calc-inputs{border-right:0;border-bottom:1.5px solid var(--ink)}
+  .works{grid-template-columns:1fr 1fr}
+  .enfoque .cols{grid-template-columns:1fr;gap:40px}
+  .about-grid,.contact-grid{grid-template-columns:1fr;gap:40px}
+}
+@media (max-width:620px){
+  body{font-size:16px}
+  .sec-head{grid-template-columns:1fr;gap:10px}
+  .sec-head .code{padding-top:0}
+  .svc-item{grid-template-columns:1fr;gap:8px}
+  .svc-meta{text-align:left}
+  .proc{grid-template-columns:1fr}
+  .proc-step{border-right:0}
+  .works{grid-template-columns:1fr}
+  .two{grid-template-columns:1fr}
+  .nav-right .cta{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Francisco Vergara Perucich">fvp<span class="dot">.</span></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#servicios" data-es="Servicios" data-en="Services">Servicios</a>
+    <a href="#proceso" data-es="Proceso" data-en="Process">Proceso</a>
+    <a href="#cotizador" data-es="Cotizador" data-en="Fee estimator">Cotizador</a>
+    <a href="#obras" data-es="Obras" data-en="Work">Obras</a>
+    <a href="#sobre" data-es="Sobre mí" data-en="About">Sobre mí</a>
+  </nav>
+  <div class="nav-right">
+    <div class="lang" role="group" aria-label="Idioma / Language">
+      <button id="es" class="on" onclick="setLang('es')" aria-pressed="true">ES</button>
+      <button id="en" onclick="setLang('en')" aria-pressed="false">EN</button>
+    </div>
+    <a href="#contacto" class="cta" data-es="Conversemos" data-en="Get in touch">Conversemos</a>
+    <button class="burger" id="burger" aria-label="Menú" aria-expanded="false" onclick="toggleMenu()">Menú</button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<main id="top">
+<section class="hero" id="hero">
+  <div class="hero-grid" aria-hidden="true">
+    <span style="top:16%;left:8%">A</span>
+    <span style="top:70%;left:12%">1</span>
+    <span style="top:30%;right:10%">B</span>
+    <span style="top:80%;right:22%">2</span>
+    <span style="top:52%;right:6%">3</span>
+  </div>
+  <div class="hero-inner">
+    <p class="eyebrow" data-es="Arquitecto · Doctor en Urbanismo (The Bartlett, UCL)" data-en="Architect · PhD in Urbanism (The Bartlett, UCL)">Arquitecto · Doctor en Urbanismo (The Bartlett, UCL)</p>
+    <h1 data-es="De la casa propia<br>al <em>plan de inversión</em>." data-en="From your own home<br>to an <em>investment plan</em>.">De la casa propia<br>al <em>plan de inversión</em>.</h1>
+    <p class="lead" data-es="Arquitectura con procesos, costos y plazos a la vista. Sin sorpresas, sin letra chica." data-en="Architecture with process, costs and timelines in full view. No surprises, no fine print.">Arquitectura con procesos, costos y plazos a la vista. Sin sorpresas, sin letra chica.</p>
+    <div class="hero-cta">
+      <a href="#contacto" class="btn-primary" data-es="Conversemos tu proyecto" data-en="Let's talk about your project">Conversemos tu proyecto</a>
+      <a href="#cotizador" class="btn-ghost" data-es="Cotizar honorarios →" data-en="Estimate the fee →">Cotizar honorarios →</a>
+    </div>
+    <div class="dim reveal"><span class="rule"></span><span data-es="anteproyecto → proyecto → permisos → obra → entrega" data-en="concept → design → permits → build → handover">anteproyecto → proyecto → permisos → obra → entrega</span></div>
+  </div>
+</section>
+
+<!-- credibility strip -->
+<div class="creds">
+  <div class="row">
+    <span data-es="PhD, The Bartlett — UCL" data-en="PhD, The Bartlett — UCL">PhD, The Bartlett — UCL</span>
+    <span data-es="Perito ante la CIDH, 2024" data-en="Expert witness, IACHR, 2024">Perito ante la CIDH, 2024</span>
+    <span data-es="Investigador FONDECYT" data-en="FONDECYT researcher">Investigador FONDECYT</span>
+    <span data-es="Profesor de Ética de la Ciudad" data-en="Professor of Ethics of the City">Profesor de Ética de la Ciudad</span>
+  </div>
+</div>
+
+<!-- ============ SERVICIOS ============ -->
+<section class="section section--paper" id="servicios">
+  <div class="wrap">
+    <div class="sec-head r-up">
+      <span class="code">01 / <span data-es="Servicios" data-en="Services">Servicios</span></span>
+      <div>
+        <h2 data-es="Qué puedo desarrollar contigo" data-en="What we can develop together">Qué puedo desarrollar contigo</h2>
+        <p data-es="Desde una vivienda hasta la evaluación de un negocio inmobiliario. En cada encargo firmamos contrato y acordamos honorarios según los valores referenciales del Colegio de Arquitectos de Chile." data-en="From a single home to the appraisal of a property venture. Every commission is governed by a contract, with fees agreed against the reference schedule of the Chilean Association of Architects.">Desde una vivienda hasta la evaluación de un negocio inmobiliario. En cada encargo firmamos contrato y acordamos honorarios según los valores referenciales del Colegio de Arquitectos de Chile.</p>
+      </div>
+    </div>
+
+    <div class="svc r-up">
+      <div class="svc-item">
+        <div class="svc-tag">casa</div>
+        <div class="svc-body">
+          <h3 data-es="Vivienda unifamiliar" data-en="Single-family home">Vivienda unifamiliar</h3>
+          <p data-es="Diseño y dirección de casas hechas a la medida de quien las habita. Del terreno a la recepción final, con criterio de materiales honestos y espacio bien resuelto." data-en="Design and site supervision of homes made to fit the people who live in them. From the plot to final approval, with honest materials and space that works.">Diseño y dirección de casas hechas a la medida de quien las habita. Del terreno a la recepción final, con criterio de materiales honestos y espacio bien resuelto.</p>
+        </div>
+        <div class="svc-meta" data-es="Arancel · 2ª categoría" data-en="Schedule · category 2">Arancel · 2ª categoría</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">obra</div>
+        <div class="svc-body">
+          <h3 data-es="Ampliación y remodelación" data-en="Extension & remodelling">Ampliación y remodelación</h3>
+          <p data-es="Intervenir lo que ya existe: ampliar, reordenar, actualizar. Diagnóstico honesto de qué conviene y qué no antes de mover un muro." data-en="Working with what already stands: extend, reorganise, upgrade. An honest read of what is worth doing before a single wall moves.">Intervenir lo que ya existe: ampliar, reordenar, actualizar. Diagnóstico honesto de qué conviene y qué no antes de mover un muro.</p>
+        </div>
+        <div class="svc-meta" data-es="Arancel · recargo 11ª cat." data-en="Schedule · category 11 uplift">Arancel · recargo 11ª cat.</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">inversión</div>
+        <div class="svc-body">
+          <h3 data-es="Evaluación y planes de inversión" data-en="Investment appraisal & plans">Evaluación y planes de inversión</h3>
+          <p data-es="Antes de comprar o construir para rentabilizar: factibilidad, cabida, tasación referencial y lectura crítica del negocio. Aquí el rigor académico trabaja para tu bolsillo." data-en="Before you buy or build to profit: feasibility, buildable capacity, reference valuation and a critical read of the deal. Academic rigour working for your bottom line.">Antes de comprar o construir para rentabilizar: factibilidad, cabida, tasación referencial y lectura crítica del negocio. Aquí el rigor académico trabaja para tu bolsillo.</p>
+        </div>
+        <div class="svc-meta" data-es="Arancel · 8ª y 9ª cat." data-en="Schedule · categories 8 & 9">Arancel · 8ª y 9ª cat.</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">norma</div>
+        <div class="svc-body">
+          <h3 data-es="Regularización y patrimonio" data-en="Regularisation & heritage">Regularización y patrimonio</h3>
+          <p data-es="Poner en regla lo construido y proteger lo que vale. Experiencia en zonas típicas e instructivos de intervención patrimonial premiados." data-en="Bringing existing building into legal order and protecting what matters. Experience in heritage zones and award-winning intervention guidelines.">Poner en regla lo construido y proteger lo que vale. Experiencia en zonas típicas e instructivos de intervención patrimonial premiados.</p>
+        </div>
+        <div class="svc-meta" data-es="Arancel · 11ª cat. / hora" data-en="Schedule · cat. 11 / hourly">Arancel · 11ª cat. / hora</div>
+      </div>
+      <div class="svc-item">
+        <div class="svc-tag">ciudad</div>
+        <div class="svc-body">
+          <h3 data-es="Consultoría urbana" data-en="Urban consultancy">Consultoría urbana</h3>
+          <p data-es="Para municipios, inmobiliarias y organizaciones: estudios socioespaciales, planificación, participación y análisis de mercado con métodos cuantitativos y cualitativos." data-en="For municipalities, developers and organisations: socio-spatial studies, planning, participation and market analysis with quantitative and qualitative methods.">Para municipios, inmobiliarias y organizaciones: estudios socioespaciales, planificación, participación y análisis de mercado con métodos cuantitativos y cualitativos.</p>
+        </div>
+        <div class="svc-meta" data-es="Arancel · 8ª cat. / convenido" data-en="Schedule · cat. 8 / by agreement">Arancel · 8ª cat. / convenido</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESO ============ -->
+<section class="section section--dark" id="proceso">
+  <div class="wrap">
+    <div class="sec-head r-up">
+      <span class="code">02 / <span data-es="Proceso" data-en="Process">Proceso</span></span>
+      <div>
+        <h2 data-es="Cómo trabajamos, etapa por etapa" data-en="How we work, stage by stage">Cómo trabajamos, etapa por etapa</h2>
+        <p data-es="Cada etapa tiene un entregable claro, un plazo estimado y un pago asociado. Sabes en todo momento en qué vas y qué sigue." data-en="Each stage has a clear deliverable, an estimated timeframe and an associated payment. You always know where you stand and what comes next.">Cada etapa tiene un entregable claro, un plazo estimado y un pago asociado. Sabes en todo momento en qué vas y qué sigue.</p>
+      </div>
+    </div>
+
+    <div class="proc r-up">
+      <div class="proc-step">
+        <div class="num">01</div>
+        <span class="dur" data-es="Sin costo · 1 reunión" data-en="No cost · 1 meeting">Sin costo · 1 reunión</span>
+        <h3 data-es="Conversación inicial" data-en="First conversation">Conversación inicial</h3>
+        <p data-es="Entiendo qué quieres, tu terreno y tu presupuesto. Salimos con un alcance y un rango de honorarios." data-en="I understand what you want, your site and your budget. We leave with a scope and a fee range.">Entiendo qué quieres, tu terreno y tu presupuesto. Salimos con un alcance y un rango de honorarios.</p>
+        <span class="pay" data-es="Pago: —" data-en="Payment: —">Pago: —</span>
+      </div>
+      <div class="proc-step">
+        <div class="num">02</div>
+        <span class="dur" data-es="≈ 3–5 semanas" data-en="≈ 3–5 weeks">≈ 3–5 semanas</span>
+        <h3 data-es="Anteproyecto" data-en="Concept design">Anteproyecto</h3>
+        <p data-es="Partido general, plantas, volumen e imagen. Lo revisamos y ajustamos juntos antes de avanzar." data-en="Overall parti, plans, massing and image. We review and adjust it together before moving on.">Partido general, plantas, volumen e imagen. Lo revisamos y ajustamos juntos antes de avanzar.</p>
+        <span class="pay" data-es="Pago: etapa A" data-en="Payment: stage A">Pago: etapa A</span>
+      </div>
+      <div class="proc-step">
+        <div class="num">03</div>
+        <span class="dur" data-es="≈ 6–10 semanas" data-en="≈ 6–10 weeks">≈ 6–10 semanas</span>
+        <h3 data-es="Proyecto" data-en="Detailed design">Proyecto</h3>
+        <p data-es="Planimetría de arquitectura, especificaciones y coordinación de especialidades para construir." data-en="Architectural drawings, specifications and coordination of engineering to build from.">Planimetría de arquitectura, especificaciones y coordinación de especialidades para construir.</p>
+        <span class="pay" data-es="Pago: etapa B" data-en="Payment: stage B">Pago: etapa B</span>
+      </div>
+      <div class="proc-step">
+        <div class="num">04</div>
+        <span class="dur" data-es="Según municipio" data-en="Council-dependent">Según municipio</span>
+        <h3 data-es="Permisos" data-en="Permits">Permisos</h3>
+        <p data-es="Ingreso y gestión del permiso de edificación ante la Dirección de Obras. Transparencia en tiempos y derechos." data-en="Filing and managing the building permit with the works department. Transparency on timelines and duties.">Ingreso y gestión del permiso de edificación ante la Dirección de Obras. Transparencia en tiempos y derechos.</p>
+        <span class="pay" data-es="Pago: gestión" data-en="Payment: filing">Pago: gestión</span>
+      </div>
+      <div class="proc-step">
+        <div class="num">05</div>
+        <span class="dur" data-es="Duración de la obra" data-en="Build duration">Duración de la obra</span>
+        <h3 data-es="Obra y entrega" data-en="Build & handover">Obra y entrega</h3>
+        <p data-es="Dirección o inspección de obra hasta la recepción final. Te entrego una casa terminada, no un plano." data-en="Site supervision or inspection through to final approval. You receive a finished home, not a drawing.">Dirección o inspección de obra hasta la recepción final. Te entrego una casa terminada, no un plano.</p>
+        <span class="pay" data-es="Pago: etapas C · D" data-en="Payment: stages C · D">Pago: etapas C · D</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ COTIZADOR ============ -->
+<section class="section section--light" id="cotizador">
+  <div class="wrap">
+    <div class="sec-head r-up">
+      <span class="code">03 / <span data-es="Cotizador" data-en="Estimator">Cotizador</span></span>
+      <div>
+        <h2 data-es="Cotizador referencial de honorarios" data-en="Reference fee estimator">Cotizador referencial de honorarios</h2>
+        <p data-es="Calculado sobre los Valores Referenciales del Colegio de Arquitectos de Chile (ed. 2007), por tramos progresivos en UF. Es una orientación honesta: el honorario definitivo se acuerda por contrato tras conocer tu proyecto." data-en="Calculated on the reference fee schedule of the Chilean Association of Architects (2007 ed.), by progressive UF brackets. An honest orientation: the final fee is agreed by contract once I know your project.">Calculado sobre los Valores Referenciales del Colegio de Arquitectos de Chile (ed. 2007), por tramos progresivos en UF. Es una orientación honesta: el honorario definitivo se acuerda por contrato tras conocer tu proyecto.</p>
+      </div>
+    </div>
+
+    <div class="calc-shell r-up">
+      <div class="calc-titlebar">
+        <span data-es="Viñeta de cálculo · referencial" data-en="Estimate block · reference only">Viñeta de cálculo · referencial</span>
+        <span class="r">C.A. Chile · UF</span>
+      </div>
+      <div class="calc-grid">
+        <!-- INPUTS -->
+        <div class="calc-inputs">
+          <div class="field">
+            <label for="tipo" data-es="Tipo de encargo" data-en="Type of commission">Tipo de encargo</label>
+            <select id="tipo" onchange="onTipo()">
+              <option value="casa" data-es="Vivienda unifamiliar (2ª cat.)" data-en="Single-family home (cat. 2)">Vivienda unifamiliar (2ª cat.)</option>
+              <option value="social" data-es="Vivienda de interés social (3ª cat.)" data-en="Social-interest housing (cat. 3)">Vivienda de interés social (3ª cat.)</option>
+              <option value="amp" data-es="Ampliación / remodelación (11ª cat.)" data-en="Extension / remodelling (cat. 11)">Ampliación / remodelación (11ª cat.)</option>
+              <option value="tasa" data-es="Tasación (9ª cat.)" data-en="Valuation (cat. 9)">Tasación (9ª cat.)</option>
+              <option value="hora" data-es="Regularización / consultoría (por hora)" data-en="Regularisation / consultancy (hourly)">Regularización / consultoría (por hora)</option>
+            </select>
+          </div>
+
+          <!-- value-based inputs -->
+          <div id="grp-obra">
+            <div class="field">
+              <label for="modo" data-es="Cómo estimas el costo" data-en="How you estimate cost">Cómo estimas el costo</label>
+              <select id="modo" onchange="onModo()">
+                <option value="total" data-es="Costo total de obra (UF)" data-en="Total build cost (UF)">Costo total de obra (UF)</option>
+                <option value="m2" data-es="Superficie × costo por m²" data-en="Area × cost per m²">Superficie × costo por m²</option>
+              </select>
+            </div>
+            <div class="field" id="f-total">
+              <label for="uftotal" data-es="Costo estimado de la obra (UF)" data-en="Estimated build cost (UF)">Costo estimado de la obra (UF)</label>
+              <input id="uftotal" type="number" min="0" step="10" value="4500" oninput="calc()" />
+            </div>
+            <div class="two" id="f-m2" style="display:none">
+              <div class="field">
+                <label for="m2" data-es="Superficie (m²)" data-en="Area (m²)">Superficie (m²)</label>
+                <input id="m2" type="number" min="0" step="1" value="150" oninput="calc()" />
+              </div>
+              <div class="field">
+                <label for="ufm2" data-es="Costo por m² (UF)" data-en="Cost per m² (UF)">Costo por m² (UF)</label>
+                <input id="ufm2" type="number" min="0" step="0.5" value="30" oninput="calc()" />
+              </div>
+            </div>
+          </div>
+
+          <!-- amp recargo -->
+          <div class="field" id="grp-amp" style="display:none">
+            <label for="ampTipo" data-es="Tipo de intervención" data-en="Type of intervention">Tipo de intervención</label>
+            <select id="ampTipo" onchange="calc()">
+              <option value="1.2" data-es="Ampliación (+20%)" data-en="Extension (+20%)">Ampliación (+20%)</option>
+              <option value="1.4" data-es="Remodelación / alteración (+40%)" data-en="Remodelling / alteration (+40%)">Remodelación / alteración (+40%)</option>
+              <option value="1.4r" data-es="Reparación (+40%)" data-en="Repair (+40%)">Reparación (+40%)</option>
+              <option value="1.5" data-es="Restauración (+50%, como obra nueva)" data-en="Restoration (+50%, as new build)">Restauración (+50%, como obra nueva)</option>
+            </select>
+          </div>
+
+          <!-- tasa -->
+          <div id="grp-tasa" style="display:none">
+            <div class="field">
+              <label for="tasaVal" data-es="Valor de la propiedad (UF)" data-en="Property value (UF)">Valor de la propiedad (UF)</label>
+              <input id="tasaVal" type="number" min="0" step="10" value="5000" oninput="calc()" />
+            </div>
+            <div class="field">
+              <label for="tasaTipo" data-es="Alcance de la tasación" data-en="Scope of valuation">Alcance de la tasación</label>
+              <select id="tasaTipo" onchange="calc()">
+                <option value="0.5|2" data-es="Apreciación (mín. 2 UF)" data-en="Appraisal (min. 2 UF)">Apreciación (mín. 2 UF)</option>
+                <option value="1|4" data-es="Informe (mín. 4 UF)" data-en="Report (min. 4 UF)">Informe (mín. 4 UF)</option>
+                <option value="3|6" data-es="Informe detallado (mín. 6 UF)" data-en="Detailed report (min. 6 UF)">Informe detallado (mín. 6 UF)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- hora -->
+          <div id="grp-hora" style="display:none">
+            <div class="field">
+              <label for="horas" data-es="Horas profesionales estimadas" data-en="Estimated professional hours">Horas profesionales estimadas</label>
+              <input id="horas" type="number" min="0" step="1" value="40" oninput="calc()" />
+              <div class="hint" data-es="Hora referencial 1 UF + 50% por +15 años de ejercicio = 1,5 UF/h." data-en="Reference hour 1 UF + 50% for 15+ years of practice = 1.5 UF/h.">Hora referencial 1 UF + 50% por +15 años de ejercicio = 1,5 UF/h.</div>
+            </div>
+          </div>
+
+          <!-- scope + modifiers (obra) -->
+          <div id="grp-mods">
+            <div class="field">
+              <label data-es="Alcance del encargo" data-en="Scope of commission">Alcance del encargo</label>
+              <div class="opts">
+                <label class="opt"><input type="radio" name="scope" value="full" checked onchange="calc()"><span data-es="Servicio completo — anteproyecto a obra (A·B·C·D)" data-en="Full service — concept to build (A·B·C·D)">Servicio completo — anteproyecto a obra (A·B·C·D)</span></label>
+                <label class="opt"><input type="radio" name="scope" value="proj" onchange="calc()"><span data-es="Solo proyecto — anteproyecto + planimetría (A·B)" data-en="Design only — concept + drawings (A·B)">Solo proyecto — anteproyecto + planimetría (A·B)</span></label>
+              </div>
+            </div>
+            <div class="opts">
+              <label class="opt" id="opt-20"><input type="checkbox" id="only20" onchange="calc()"><span data-es="Recargo 20% si otro arquitecto dirige la obra" data-en="20% uplift if another architect directs the build">Recargo 20% si otro arquitecto dirige la obra<small data-es="Cláusula 2.7 del arancel." data-en="Clause 2.7 of the schedule.">Cláusula 2.7 del arancel.</small></span></label>
+              <label class="opt"><input type="checkbox" id="ase10" onchange="calc()"><span data-es="Coordinación de especialistas (+10%)" data-en="Coordination of specialists (+10%)">Coordinación de especialistas (+10%)<small data-es="Cláusula 2.22 — cálculo, suelos, instalaciones, etc." data-en="Clause 2.22 — structure, soils, services, etc.">Cláusula 2.22 — cálculo, suelos, instalaciones, etc.</small></span></label>
+            </div>
+          </div>
+
+          <div class="field" style="margin-top:22px;margin-bottom:0">
+            <label for="ufval" data-es="Valor UF del día (editable)" data-en="Today's UF value (editable)">Valor UF del día (editable)</label>
+            <input id="ufval" type="number" min="0" step="1" value="39250" oninput="calc()" />
+            <div class="hint" data-es="Actualiza con la UF vigente para ver el equivalente en pesos." data-en="Update with the current UF to see the peso equivalent.">Actualiza con la UF vigente para ver el equivalente en pesos.</div>
+          </div>
+        </div>
+
+        <!-- OUTPUT -->
+        <div class="calc-out">
+          <p class="eyebrow" data-es="Honorario referencial" data-en="Reference fee">Honorario referencial</p>
+          <div class="result-num"><span id="ufOut">0</span> <span class="u">UF</span></div>
+          <div class="result-clp" id="clpOut">≈ $0 CLP</div>
+          <div class="breakdown" id="breakdown"></div>
+        </div>
+      </div>
+      <div class="calc-note">
+        <span data-es="Valores referenciales, no una oferta. Sujetos a visita, complejidad, contrato de servicios y a los recargos del arancel (obra en otra ciudad 2.9, interrupciones 2.10, entre otros). Cálculo progresivo por tramos según cap. 5.2 del documento del C.A. de Chile." data-en="Reference values, not an offer. Subject to a site visit, complexity, a service contract and the schedule's uplifts (out-of-town work 2.9, interruptions 2.10, among others). Progressive bracket calculation per ch. 5.2 of the C.A. Chile document.">Valores referenciales, no una oferta. Sujetos a visita, complejidad, contrato de servicios y a los recargos del arancel (obra en otra ciudad 2.9, interrupciones 2.10, entre otros). Cálculo progresivo por tramos según cap. 5.2 del documento del C.A. de Chile.</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ OBRAS ============ -->
+<section class="section section--paper" id="obras">
+  <div class="wrap">
+    <div class="sec-head r-up">
+      <span class="code">04 / <span data-es="Obras" data-en="Work">Obras</span></span>
+      <div>
+        <h2 data-es="Obra construida y proyectos" data-en="Built work & projects">Obra construida y proyectos</h2>
+        <p data-es="Una selección: viviendas hechas a la medida, infraestructura pública, patrimonio y consultoría internacional." data-en="A selection: bespoke homes, public infrastructure, heritage and international consultancy.">Una selección: viviendas hechas a la medida, infraestructura pública, patrimonio y consultoría internacional.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="works r-up" role="list">
+    <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/wNx28yGb/exterior-escorzo.jpg" alt="Casa Ángulo Roto, Lampa" onerror="this.style.display='none'">
+      <div class="ph-label">img/casa-angulo-roto.jpg</div>
+      <div class="meta">
+        <span class="tag">casa · 2011</span>
+        <h3 data-es="Casa Ángulo Roto" data-en="Broken Angle House">Casa Ángulo Roto</h3>
+        <span class="place">Lampa, Santiago · 184 m²</span>
+        <p data-es="Romper el ángulo recto para una familia que no quería una casa estándar." data-en="Breaking the right angle for a family that did not want a standard house.">Romper el ángulo recto para una familia que no quería una casa estándar.</p>
+      </div>
+    </article>
+    <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/wZ9X3x70/casa-fuentes-tapia-2.jpg" alt="Casa colgada de los Andes, El Arrayán" onerror="this.style.display='none'">
+      <div class="ph-label">img/casa-andes.jpg</div>
+      <div class="meta">
+        <span class="tag">casa · 2013</span>
+        <h3 data-es="Casa colgada de los Andes" data-en="House Hanging from the Andes">Casa colgada de los Andes</h3>
+        <span class="place">El Arrayán, Santiago · 180 m²</span>
+        <p data-es="Fundir la casa en la montaña, dejando entrar el paisaje sin perder el orden." data-en="Melting the house into the mountain, letting the landscape in without losing order.">Fundir la casa en la montaña, dejando entrar el paisaje sin perder el orden.</p>
+      </div>
+    </article>
+    <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/2Y8Z9LKG/puente.jpg" alt="Puente Activo de Las Condes" onerror="this.style.display='none'">
+      <div class="ph-label">img/puente-activo.jpg</div>
+      <div class="meta">
+        <span class="tag" data-es="público" data-en="public">público</span>
+        <h3 data-es="Puente Activo" data-en="Active Bridge">Puente Activo</h3>
+        <span class="place">Las Condes, Santiago</span>
+        <p data-es="Un puente-edificio interactivo que la ciudadanía enciende con su teléfono." data-en="An interactive bridge-building that citizens light up from their phones.">Un puente-edificio interactivo que la ciudadanía enciende con su teléfono.</p>
+      </div>
+    </article>
+    <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/3yXcJ0wx/baanmankong.jpg" alt="Baan Mankong, Tailandia" onerror="this.style.display='none'">
+      <div class="ph-label">img/baan-mankong.jpg</div>
+      <div class="meta">
+        <span class="tag" data-es="consultoría · 2013" data-en="consultancy · 2013">consultoría · 2013</span>
+        <h3 data-es="Baan Mankong" data-en="Baan Mankong">Baan Mankong</h3>
+        <span class="place" data-es="Tailandia · vivienda social" data-en="Thailand · social housing">Tailandia · vivienda social</span>
+        <p data-es="Estrategias de vivienda social para comunidades urbanas pobres, con CODI." data-en="Social-housing strategies for the urban poor, with CODI.">Estrategias de vivienda social para comunidades urbanas de bajos ingresos, con CODI.</p>
+      </div>
+    </article>
+        <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/gbdMQ0vj/valparaiso-edificio-esmeralda.jpg" alt="Remodelación Edificio Esmeralda, Valparaíso" onerror="this.style.display='none'">
+      <div class="ph-label">img/esmeralda.jpg</div>
+      <div class="meta">
+        <span class="tag" data-es="público" data-en="public">público</span>
+        <h3 data-es="Remodelación Edificio Esmeralda" data-en="Remodeling Esmeralda Building">Remodelación Edificio Esmeralda</h3>
+        <span class="place">Valparaíso</span>
+        <p data-es="Una reforma que respeta la historia del edificio y mejora su funcionalidad en zona de conservación histórica del Patrimonio de la Humanidad." data-en="A renovation that respects the history of the building and improves its functionality in a World Heritage Site.">Una reforma que respeta la historia del edificio y mejora su funcionalidad en zona de conservación histórica del Patrimonio de la Humanidad.</p>
+      </div>
+    </article>
+    <article class="work" role="listitem" tabindex="0">
+      <img class="ph-img" src="https://i.ibb.co/kskTSrZC/mineduc-santiago.jpg" alt="Análisis Espacios Educativos, MINEDUC" onerror="this.style.display='none'">
+      <div class="ph-label">img/santiagomap.jpg</div>
+      <div class="meta">
+        <span class="tag" data-es="consultoría · 2022" data-en="consultancy · 2022">consultoría · 2022</span>
+        <h3 data-es="Espacios Educativos MINEDUC" data-en="MINEDUC Educational Spaces">Espacios Educativos MINEDUC</h3>
+        <span class="place" data-es="Chile · Ministerio de Educación" data-en="Chile · Ministry of Education">Chile · Ministerio de Educación</span>
+        <p data-es="Análisis espacial de infraestructura educativa a escala nacional para el Ministerio de Educación de Chile." data-en="Spatial analysis of educational infrastructure at national scale for the Chilean Ministry of Education.">Análisis espacial de infraestructura educativa a escala nacional para el Ministerio de Educación de Chile.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ ENFOQUE ============ -->
+<section class="section enfoque">
+  <div class="wrap">
+    <div class="cols">
+      <div class="r-up">
+        <p class="eyebrow" data-es="05 / Enfoque" data-en="05 / Approach">05 / Enfoque</p>
+        <blockquote data-es="Pensar la arquitectura como algo predecible es aburrido. A veces hay que <em>cruzar lo establecido</em> para explorar más allá de nuestra ceguera." data-en="Thinking of architecture as something predictable is dull. Sometimes you must <em>cross the established line</em> to explore beyond our blindness.">Pensar la arquitectura como algo predecible es aburrido. A veces hay que <em>cruzar lo establecido</em> para explorar más allá de nuestra ceguera.</blockquote>
+        <p class="attr" data-es="— Francisco Vergara Perucich" data-en="— Francisco Vergara Perucich">— Francisco Vergara Perucich</p>
+      </div>
+      <div class="vals r-up">
+        <div class="val">
+          <div class="k" data-es="Transparencia" data-en="Transparency">Transparencia</div>
+          <p data-es="Costos, plazos y decisiones a la vista desde el primer día." data-en="Costs, timelines and decisions in plain view from day one.">Costos, plazos y decisiones a la vista desde el primer día.</p>
+        </div>
+        <div class="val">
+          <div class="k" data-es="Cliente adentro" data-en="Client inside">Cliente adentro</div>
+          <p data-es="La casa es tuya: te involucras en cada etapa del diseño." data-en="The house is yours: you take part in every stage of the design.">La casa es tuya: te involucras en cada etapa del diseño.</p>
+        </div>
+        <div class="val">
+          <div class="k" data-es="Rigor" data-en="Rigour">Rigor</div>
+          <p data-es="Un doctorado y años de investigación al servicio de tu proyecto." data-en="A doctorate and years of research at the service of your project.">Un doctorado y años de investigación al servicio de tu proyecto.</p>
+        </div>
+        <div class="val">
+          <div class="k" data-es="Ética de la ciudad" data-en="Ethics of the city">Ética de la ciudad</div>
+          <p data-es="Cada proyecto responde también a quienes lo rodean." data-en="Every project answers to those around it, too.">Cada proyecto responde también a quienes lo rodean.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SOBRE ============ -->
+<section class="section section--light" id="sobre">
+  <div class="wrap">
+    <div class="sec-head r-up">
+      <span class="code">06 / <span data-es="Sobre mí" data-en="About">Sobre mí</span></span>
+      <div>
+        <h2 data-es="Arquitecto, doctor y profesor" data-en="Architect, doctor and professor">Arquitecto, doctor y profesor</h2>
+      </div>
+    </div>
+    <div class="about-grid r-up">
+      <div class="about-bio">
+        <p data-es="Soy arquitecto por la Universidad Central, magíster en Arquitectura de la Universidad Católica, Master en Big Data por la Universidad Isabel I, Master en Ciencas y doctor en Desarrollo y Planificación por The Bartlett Development Planning Unit, University College London." data-en="I am an architect from Universidad Central, hold a Master in Architecture from Universidad Católica, Master in Big Data from Universidad Isabel I, Master in Sciences and a PhD in Development Planning from The Bartlett Development Planning Unit, University College London.">Soy arquitecto por la Universidad Central, magíster en Arquitectura de la Universidad Católica, Master en Big Data por la Universidad Isabel I, Master en Ciencas y doctor en Desarrollo y Planificación por The Bartlett Development Planning Unit, University College London.</p>
+        <p data-es="Además de proyectar y construir, dirijo el Centro Producción del Espacio y enseño Ética de la Ciudad. Esa doble vida —obra y academia— es justamente lo que te ofrezco: manos en la construcción y una cabeza entrenada para entender el suelo, la inversión y la ciudad." data-en="Beyond designing and building, I direct the Centre for the Production of Space and teach Ethics of the City. That double life — practice and academia — is exactly what I offer you: hands in construction and a mind trained to understand land, investment and the city.">Además de proyectar y construir, dirijo el Centro Producción del Espacio y enseño Ética de la Ciudad. Esa doble vida —obra y academia— es justamente lo que te ofrezco: manos en la construcción y una cabeza entrenada para entender el suelo, la inversión y la ciudad.</p>
+        <p data-es="En 2024 fui convocado como perito ante la Comisión Interamericana de Derechos Humanos. Lo mismo que llevo a ese estrado lo pongo en tu proyecto: rigor, honestidad y compromiso con el resultado." data-en="In 2024 I was called as an expert witness before the Inter-American Commission on Human Rights. The same rigour, honesty and commitment I bring to that stand, I bring to your project.">En 2024 fui convocado como perito ante la Comisión Interamericana de Derechos Humanos. Lo mismo que llevo a ese estrado lo pongo en tu proyecto: rigor, honestidad y compromiso con el resultado.</p>
+      </div>
+      <div class="creds-list">
+        <div class="cr"><span class="y">2018</span><span class="t">PhD Development Planning<small>The Bartlett · UCL, Londres</small></span></div>
+        <div class="cr"><span class="y">2013</span><span class="t">MSc Building &amp; Urban Design<small>University College London</small></span></div>
+        <div class="cr"><span class="y">2011</span><span class="t" data-es-html="Magíster en Arquitectura<small>P. Universidad Católica de Chile</small>" data-en-html="Master in Architecture<small>P. Universidad Católica de Chile</small>">Magíster en Arquitectura<small>P. Universidad Católica de Chile</small></span></div>
+        <div class="cr"><span class="y">2009</span><span class="t" data-es-html="Arquitecto<small>Universidad Central · máxima distinción</small>" data-en-html="Architect<small>Universidad Central · top distinction</small>">Arquitecto<small>Universidad Central · máxima distinción</small></span></div>
+        <div class="cr"><span class="y">2019—</span><span class="t" data-es-html="Director, Centro Producción del Espacio<small>Universidad de Las Américas</small>" data-en-html="Director, Centre for the Production of Space<small>Universidad de Las Américas</small>">Director, Centro Producción del Espacio<small>Universidad de Las Américas</small></span></div>
+        <div class="cr"><span class="y">2024</span><span class="t" data-es-html="Perito ante la CIDH<small>190° período de sesiones</small>" data-en-html="Expert witness, IACHR<small>190th session</small>">Perito ante la CIDH<small>190° período de sesiones</small></span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section class="section contact" id="contacto">
+  <div class="wrap">
+    <div class="contact-grid">
+      <div class="r-up">
+        <h2 data-es="Conversemos tu proyecto" data-en="Let's talk about your project">Conversemos tu proyecto</h2>
+        <p class="lead" data-es="Cuéntame qué tienes en mente. La primera conversación no tiene costo y de ahí sales con un alcance claro y un rango de honorarios." data-en="Tell me what you have in mind. The first conversation is free, and you leave with a clear scope and a fee range.">Cuéntame qué tienes en mente. La primera conversación no tiene costo y de ahí sales con un alcance claro y un rango de honorarios.</p>
+        <div class="contact-lines">
+          <a href="mailto:franciscovergarap@gmail.com">
+            <span class="lbl">Email</span>
+            <span>franciscovergarap@gmail.com</span>
+          </a>
+          <a href="https://wa.me/56987728379" target="_blank" rel="noopener">
+            <span class="lbl">WhatsApp</span>
+            <span>+56 9 8772 8379</span>
+          </a>
+          <a href="#" onclick="return false">
+            <span class="lbl" data-es="Ubicación" data-en="Location">Ubicación</span>
+            <span>Santiago, Chile</span>
+          </a>
+        </div>
+      </div>
+      <div class="r-up">
+        <form onsubmit="return sendForm(event)">
+          <div class="field">
+            <label for="n-nombre" data-es="Nombre" data-en="Name">Nombre</label>
+            <input id="n-nombre" type="text" required />
+          </div>
+          <div class="field">
+            <label for="n-email" data-es="Tu email" data-en="Your email">Tu email</label>
+            <input id="n-email" type="email" required />
+          </div>
+          <div class="field">
+            <label for="n-msg" data-es="Sobre tu proyecto" data-en="About your project">Sobre tu proyecto</label>
+            <textarea id="n-msg" rows="4" required></textarea>
+          </div>
+          <button type="submit" data-es="Enviar mensaje" data-en="Send message">Enviar mensaje</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="row">
+    <span class="brand">fvp<span style="color:var(--rust)">.</span></span>
+    <span>Francisco Vergara Perucich · <span data-es="Arquitecto" data-en="Architect">Arquitecto</span> · © 2026</span>
+    <span data-es="Santiago de Chile" data-en="Santiago, Chile">Santiago de Chile</span>
+  </div>
+</footer>
+
+<script>
+/* ============ LANGUAGE ============ */
+var LANG='es';
+function setLang(l){
+  LANG=l;
+  document.documentElement.lang=l;
+  document.getElementById('es').classList.toggle('on',l==='es');
+  document.getElementById('en').classList.toggle('on',l==='en');
+  document.getElementById('es').setAttribute('aria-pressed',l==='es');
+  document.getElementById('en').setAttribute('aria-pressed',l==='en');
+  document.querySelectorAll('[data-es]').forEach(function(el){
+    var v=el.getAttribute('data-'+l); if(v!=null) el.innerHTML=v;
+  });
+  document.querySelectorAll('[data-es-html]').forEach(function(el){
+    var v=el.getAttribute('data-'+l+'-html'); if(v!=null) el.innerHTML=v;
+  });
+  calc();
+}
+
+/* ============ MOBILE MENU ============ */
+function toggleMenu(){
+  var n=document.getElementById('nav'),b=document.getElementById('burger');
+  var open=n.classList.toggle('open');
+  b.setAttribute('aria-expanded',open);
+}
+document.querySelectorAll('.nav-links a').forEach(function(a){
+  a.addEventListener('click',function(){document.getElementById('nav').classList.remove('open');document.getElementById('burger').setAttribute('aria-expanded','false');});
+});
+
+/* ============ NAV SHRINK ============ */
+window.addEventListener('scroll',function(){
+  document.getElementById('nav').classList.toggle('shrunk',window.scrollY>40);
+});
+
+/* ============ REVEAL ON SCROLL ============ */
+var io=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('reveal'); io.unobserve(e.target);} });
+},{threshold:.12});
+document.querySelectorAll('.r-up,.dim').forEach(function(el){io.observe(el);});
+
+/* ============ FEE CALCULATOR ============ */
+/* progressive bracket sum: brackets=[{upTo, rate}] last upTo=Infinity */
+function prog(v,br){
+  var total=0,prev=0;
+  for(var i=0;i<br.length;i++){
+    var span=Math.min(v,br[i].upTo)-prev;
+    if(span>0){ total+=span*br[i].rate; prev=br[i].upTo; }
+    if(v<=br[i].upTo) break;
+  }
+  return total;
+}
+var INF=Infinity;
+/* Category 2 — buildings in general (a custom home). Phase tables A/B/C/D. */
+var C2={
+  A:[{upTo:650,rate:.010},{upTo:6500,rate:.009},{upTo:32500,rate:.008},{upTo:65000,rate:.0065},{upTo:INF,rate:.0055}],
+  B:[{upTo:650,rate:.038},{upTo:6500,rate:.034},{upTo:32500,rate:.030},{upTo:65000,rate:.025},{upTo:INF,rate:.021}],
+  C:[{upTo:650,rate:.010},{upTo:6500,rate:.009},{upTo:32500,rate:.008},{upTo:65000,rate:.0065},{upTo:INF,rate:.0055}],
+  D:[{upTo:650,rate:.032},{upTo:6500,rate:.028},{upTo:32500,rate:.024},{upTo:65000,rate:.022},{upTo:INF,rate:.018}]
+};
+/* Category 3 — social-interest housing */
+var C3={
+  A:[{upTo:650,rate:.0075},{upTo:6500,rate:.0067},{upTo:32500,rate:.0060},{upTo:65000,rate:.0050},{upTo:INF,rate:.0040}],
+  B:[{upTo:650,rate:.0285},{upTo:6500,rate:.0253},{upTo:32500,rate:.0221},{upTo:65000,rate:.0190},{upTo:INF,rate:.0159}],
+  C:[{upTo:650,rate:.0075},{upTo:6500,rate:.0067},{upTo:32500,rate:.0060},{upTo:65000,rate:.0050},{upTo:INF,rate:.0040}],
+  D:[{upTo:650,rate:.0240},{upTo:6500,rate:.0213},{upTo:32500,rate:.0184},{upTo:65000,rate:.0160},{upTo:INF,rate:.0136}]
+};
+/* Category 9 — valuation, per-mil on property value */
+var C9=[{upTo:325,rate:.004},{upTo:1300,rate:.0025},{upTo:3250,rate:.0015},{upTo:6500,rate:.001},{upTo:16250,rate:.00075},{upTo:INF,rate:.0005}];
+
+var L={
+  es:{A:'A · Preparatorios',B:'B · Proyecto',C:'C · Estructura',D:'D · Ejecución',
+      base:'Base arancel',reca:'Intervención',ase:'Especialistas +10%',solo:'Proyecto +20%',
+      tot:'Total referencial',hh:'Horas × 1,5 UF',apre:'Tasación',cons:'Consultoría / regularización'},
+  en:{A:'A · Preparatory',B:'B · Design',C:'C · Structure',D:'D · Build',
+      base:'Schedule base',reca:'Intervention',ase:'Specialists +10%',solo:'Design +20%',
+      tot:'Reference total',hh:'Hours × 1.5 UF',apre:'Valuation',cons:'Consultancy / regularisation'}
+};
+
+function money(n){ return n.toLocaleString('es-CL',{maximumFractionDigits:0}); }
+function uf(n){ return n.toLocaleString('es-CL',{minimumFractionDigits:1,maximumFractionDigits:1}); }
+
+function onTipo(){
+  var t=document.getElementById('tipo').value;
+  document.getElementById('grp-obra').style.display=(t==='casa'||t==='social'||t==='amp')?'block':'none';
+  document.getElementById('grp-amp').style.display=(t==='amp')?'block':'none';
+  document.getElementById('grp-tasa').style.display=(t==='tasa')?'block':'none';
+  document.getElementById('grp-hora').style.display=(t==='hora')?'block':'none';
+  document.getElementById('grp-mods').style.display=(t==='casa'||t==='social'||t==='amp')?'block':'none';
+  calc();
+}
+function onModo(){
+  var m=document.getElementById('modo').value;
+  document.getElementById('f-total').style.display=(m==='total')?'block':'none';
+  document.getElementById('f-m2').style.display=(m==='m2')?'grid':'none';
+  calc();
+}
+
+function calc(){
+  var t=document.getElementById('tipo').value;
+  var ufv=parseFloat(document.getElementById('ufval').value)||0;
+  var dict=L[LANG];
+  var rows=[], honor=0;
+
+  if(t==='casa'||t==='social'||t==='amp'){
+    var cost;
+    if(document.getElementById('modo').value==='total'){ cost=parseFloat(document.getElementById('uftotal').value)||0; }
+    else { cost=(parseFloat(document.getElementById('m2').value)||0)*(parseFloat(document.getElementById('ufm2').value)||0); }
+    var tbl=(t==='social')?C3:C2;
+    var scope=document.querySelector('input[name=scope]:checked').value;
+    var a=prog(cost,tbl.A),b=prog(cost,tbl.B),c=prog(cost,tbl.C),d=prog(cost,tbl.D);
+    if(scope==='proj'){
+      rows.push([dict.A,a]); rows.push([dict.B,b]);
+      honor=a+b;
+      if(document.getElementById('only20').checked){ var up=honor*0.2; rows.push([dict.solo,up]); honor+=up; }
+    } else {
+      rows.push([dict.A,a]); rows.push([dict.B,b]); rows.push([dict.C,c]); rows.push([dict.D,d]);
+      honor=a+b+c+d;
+    }
+    if(t==='amp'){
+      var sel=document.getElementById('ampTipo').value;
+      var f=parseFloat(sel)||1.2; var pct=(f-1);
+      var extra=honor*pct;
+      rows.push([dict.reca+' +'+Math.round(pct*100)+'%',extra]);
+      honor+=extra;
+    }
+    if(document.getElementById('ase10').checked){ var ex=honor*0.1; rows.push([dict.ase,ex]); honor+=ex; }
+  }
+  else if(t==='tasa'){
+    var pv=parseFloat(document.getElementById('tasaVal').value)||0;
+    var parts=document.getElementById('tasaTipo').value.split('|');
+    var mult=parseFloat(parts[0]), min=parseFloat(parts[1]);
+    var basev=prog(pv,C9)*mult;
+    honor=Math.max(basev,min);
+    rows.push([dict.apre,basev]);
+    if(honor>basev) rows.push([(LANG==='es'?'Mínimo':'Minimum'),min]);
+  }
+  else if(t==='hora'){
+    var h=parseFloat(document.getElementById('horas').value)||0;
+    honor=h*1.5;
+    rows.push([dict.hh,honor]);
+  }
+
+  document.getElementById('ufOut').textContent=uf(honor);
+  document.getElementById('clpOut').textContent='≈ $'+money(honor*ufv)+' CLP';
+  var bd=document.getElementById('breakdown'); bd.innerHTML='';
+  rows.forEach(function(r){
+    var el=document.createElement('div'); el.className='brow';
+    el.innerHTML='<span>'+r[0]+'</span><b>'+uf(r[1])+' UF</b>'; bd.appendChild(el);
+  });
+  var tot=document.createElement('div'); tot.className='brow'; tot.style.borderBottom='0';
+  tot.innerHTML='<span style="color:var(--rust-hi)">'+dict.tot+'</span><b style="color:var(--rust-hi)">'+uf(honor)+' UF</b>';
+  bd.appendChild(tot);
+}
+
+/* ============ FORM ============ */
+function sendForm(e){
+  e.preventDefault();
+  var n=encodeURIComponent(document.getElementById('n-nombre').value);
+  var m=encodeURIComponent(document.getElementById('n-msg').value);
+  var em=encodeURIComponent(document.getElementById('n-email').value);
+  /* Placeholder: opens the visitor's mail client. Replace with your commercial email
+     or wire a free service like Formspree (formspree.io) for a real inbox. */
+  window.location.href='mailto:franciscovergarap@gmail.com?subject='+
+    encodeURIComponent((LANG==='es'?'Nuevo proyecto — ':'New project — ')+decodeURIComponent(n))+
+    '&body='+m+'%0A%0A'+em;
+  return false;
+}
+
+/* ============ UF EN TIEMPO REAL (mindicador.cl) ============ */
+fetch('https://mindicador.cl/api')
+  .then(function(r){ return r.json(); })
+  .then(function(d){
+    var v=d.uf&&d.uf.valor;
+    if(v){
+      document.getElementById('ufval').value=Math.round(v);
+      calc();
+    }
+  })
+  .catch(function(){/* mantiene el valor por defecto si la API falla */});
+
+/* init */
+onTipo();
+calc();
+</script>
+</body>
+</html>
